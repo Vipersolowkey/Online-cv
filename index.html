@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Le The Vinh — Automation Architect | CV</title>
+  <meta name="description" content="Le The Vinh — Automation Architect. Experience, Projects, Education, Certificates, Awards." />
+
+  <style>
+    :root{
+      /* Professional palette */
+      --bg0:#0b1020;
+      --bg1:#0f172a;
+      --bg2:#0b1220;
+
+      --card:#0f1a30;
+      --card2:#101c36;
+
+      --text:#eaf0ff;
+      --muted:#a6b3d1;
+
+      --line:rgba(234,240,255,.12);
+      --shadow:0 14px 40px rgba(0,0,0,.35);
+
+      --accent:#6d5efc;   /* indigo */
+      --accent2:#23c6da;  /* cyan */
+      --good:#35d07f;
+
+      --radius:18px;
+      --max: 1140px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      line-height:1.58;
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(109,94,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 15%, rgba(35,198,218,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 110%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg0));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 18px 70px}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(11,18,32,.86), rgba(11,18,32,.62));
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .brand{display:flex; gap:12px; align-items:center; min-width:0}
+    .badge{
+      width:42px; height:42px; border-radius:14px;
+      display:grid; place-items:center;
+      font-weight:900;
+      background: linear-gradient(135deg, rgba(109,94,252,.90), rgba(35,198,218,.85));
+      box-shadow: 0 10px 25px rgba(109,94,252,.28);
+      border: 1px solid rgba(255,255,255,.10);
+      flex:0 0 auto;
+    }
+    .brand .txt{min-width:0}
+    .brand .name{
+      font-size:14px; font-weight:900; letter-spacing:.2px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brand .role{
+      font-size:12px; color:var(--muted);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+
+    .tabs{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .tab{
+      appearance:none;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:12px;
+      display:flex; align-items:center; gap:8px;
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .tab:hover{
+      background: rgba(255,255,255,.06);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+    }
+    .tab[aria-current="true"]{
+      border-color: rgba(109,94,252,.50);
+      background: linear-gradient(135deg, rgba(109,94,252,.18), rgba(35,198,218,.10));
+      box-shadow: 0 12px 28px rgba(109,94,252,.18);
+    }
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .btn{
+      appearance:none;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:12px;
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(35,198,218,.18);
+      border-color: rgba(35,198,218,.35);
+      box-shadow: 0 14px 30px rgba(35,198,218,.14);
+    }
+    .btn.primary{
+      border-color: rgba(109,94,252,.50);
+      background: rgba(109,94,252,.16);
+    }
+    .btn.primary:hover{
+      background: rgba(109,94,252,.22);
+      box-shadow: 0 14px 30px rgba(109,94,252,.18);
+    }
+
+    /* Layout */
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(15,26,48,.92), rgba(16,28,54,.92));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{padding:18px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:12px;
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+      width: fit-content;
+      margin-bottom:12px;
+    }
+    h1{margin:0 0 8px; font-size:32px; line-height:1.1; letter-spacing:.2px}
+    .subtitle{margin:0; color:var(--muted); font-size:14px}
+
+    .facts{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .fact{
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      min-width:0;
+    }
+    .fact .label{font-size:11px; color:var(--muted); margin-bottom:4px}
+    .fact .value{font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+    .side{padding:18px}
+    .mini{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .mini h3{margin:0 0 8px; font-size:13px; letter-spacing:.2px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+    .chip.good{
+      border-color: rgba(53,208,127,.28);
+      background: rgba(53,208,127,.10);
+      color: #dff8ea;
+    }
+
+    /* Sections */
+    .content{padding:18px}
+    .panel{
+      padding:16px;
+      border-radius: 18px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      margin-top:12px;
+    }
+    .panel:first-of-type{margin-top:0}
+    .panel h2{
+      margin:0 0 12px;
+      font-size:15px;
+      letter-spacing:.2px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(109,94,252,.12);
+      flex:0 0 auto;
+    }
+
+    .muted{color:var(--muted)}
+    .item{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:12px;
+      margin-top:10px;
+    }
+    .item:first-of-type{margin-top:0}
+    .toprow{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .title{font-weight:900}
+    .meta{font-size:12px; color:var(--muted)}
+    ul{margin:8px 0 0 18px; padding:0}
+    li{margin:6px 0}
+
+    .tags{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(109,94,252,.22);
+      background: rgba(109,94,252,.10);
+      color:#e7e4ff;
+    }
+    .tag.cyan{
+      border-color: rgba(35,198,218,.22);
+      background: rgba(35,198,218,.10);
+      color:#dffcff;
+    }
+
+    /* Tabs logic */
+    [data-group]{display:none}
+    [data-group][data-visible="true"]{display:block}
+
+    /* Smooth appear */
+    .fadeIn{
+      animation: fadeUp .36s ease both;
+    }
+    @keyframes fadeUp{
+      from{opacity:0; transform: translateY(6px)}
+      to{opacity:1; transform: translateY(0)}
+    }
+
+    footer{
+      margin-top:14px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .facts{grid-template-columns:1fr}
+    }
+    @media print{
+      .topbar, .actions{display:none !important}
+      body{background:#fff; color:#111}
+      .card{box-shadow:none}
+      .muted{color:#444}
+      .panel,.item,.fact,.mini{background:#fff}
+      a{text-decoration:underline}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div class="brand">
+        <div class="badge">LV</div>
+        <div class="txt">
+          <div class="name">Lê Thế Vinh</div>
+          <div class="role">Automation Architect</div>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Main sections">
+        <button class="tab" data-tab="about" aria-current="true">About Me</button>
+        <button class="tab" data-tab="projects" aria-current="false">Projects</button>
+        <button class="tab" data-tab="experience" aria-current="false">Experience</button>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" onclick="downloadPDF()">Download CV (PDF)</button>
+        <button class="btn" id="copyEmail">Copy email</button>
+        <button class="btn" onclick="window.print()">Print</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <!-- LEFT -->
+      <section class="card hero">
+        <div class="kicker">📄 Online CV</div>
+        <h1>Lê Thế Vinh</h1>
+        <p class="subtitle">Automation Architect</p>
+
+        <div class="facts">
+          <div class="fact">
+            <div class="label">Date of birth</div>
+            <div class="value">05/07/2006</div>
+          </div>
+          <div class="fact">
+            <div class="label">Phone</div>
+            <div class="value">0966013783</div>
+          </div>
+          <div class="fact">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:lethevinh123457@gmail.com">lethevinh123457@gmail.com</a></div>
+          </div>
+          <div class="fact">
+            <div class="label">Address</div>
+            <div class="value">56, TX21, Thạnh Xuân Ward, District 12</div>
+          </div>
+        </div>
+
+        <!-- GROUP: ABOUT -->
+        <div data-group="about" data-visible="true" class="fadeIn" style="margin-top:14px">
+          <div class="panel">
+            <h2><span class="dot"></span>Introduction</h2>
+            <p class="muted" style="margin:0">
+              As a dedicated Automation Architect with extensive experience in designing and delivering enterprise-scale
+              automation solutions, I am driven by the goal of transforming complex business processes into efficient,
+              intelligent, and scalable systems. My expertise lies in building robust automation frameworks, aligning
+              technology strategies with business objectives, and ensuring high standards of reliability, security, and
+              performance. I am passionate about leveraging modern technologies such as cloud platforms, AI-powered
+              automation, and DevOps practices to create sustainable digital ecosystems. With a proactive mindset and
+              strong leadership capabilities, I continuously strive to innovate, optimize, and guide teams in solving
+              complex technical challenges while delivering measurable business value.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2><span class="dot"></span>Skills</h2>
+
+            <div class="item">
+              <div class="toprow">
+                <div class="title">Professional Traits</div>
+                <div class="meta">Core strengths</div>
+              </div>
+              <div class="chips" style="margin-top:10px">
+                <span class="chip">Interpersonal Skills</span>
+                <span class="chip">Analytical Thinking</span>
+                <span class="chip">Technical Foundation</span>
+                <span class="chip">Collaboration</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="toprow">
+                <div class="title">English Proficiency</div>
+                <div class="meta"></div>
+              </div>
+              <div class="chips" style="margin-top:10px">
+                <span class="chip good">IELTS 6.0 | 2022</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2><span class="dot"></span>Certificates</h2>
+            <div class="item">
+              <div class="toprow">
+                <div class="title">Computational Thinking for Problem Solving</div>
+                <div class="meta">University of Pennsylvania | 2024</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="toprow">
+                <div class="title">IELTS 6.0</div>
+                <div class="meta">2022</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2><span class="dot"></span>Prizes</h2>
+            <div class="item">
+              <div class="toprow">
+                <div class="title">Third Prize in Mathematics, Group V — Olympic 30/4 Competition</div>
+                <div class="meta">2022</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="toprow">
+                <div class="title">9th Place (Team Category) — Wecode Challenge within UIT Bootcamp</div>
+                <div class="meta">2025</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="toprow">
+                <div class="title">6th Place — IT Arena Competition</div>
+                <div class="meta">2025</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="toprow">
+                <div class="title">5th Place — Cursor Hackathon HCMC</div>
+                <div class="meta">2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP: PROJECTS -->
+        <div data-group="projects" data-visible="false" class="fadeIn" style="margin-top:14px">
+          <div class="panel">
+            <h2><span class="dot"></span>Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">Vehicle Re-Identification (ReID) using YOLOv8</div>
+                  <div class="meta">Duration: 04/2025 – 05/2025</div>
+                </div>
+                <div class="meta">Project</div>
+              </div>
+              <p class="muted" style="margin:8px 0 0; font-size:13px">
+                Developed a vehicle Re-Identification (ReID) model using the YOLOv8 framework.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">YOLOv8</span>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">UIT Algo Summer Bootcamp 2025 — Lane Markings & Traffic Signal Detection</div>
+                  <div class="meta">Duration: 04/2025 – 05/2025</div>
+                </div>
+                <div class="meta">Role: Computer Vision Engineer</div>
+              </div>
+
+              <p class="muted" style="margin:8px 0 0; font-size:13px">
+                A computer vision system designed to automatically detect lane markings and traffic signal states in real-time
+                to support intelligent traffic monitoring and automation.
+              </p>
+
+              <div style="margin-top:10px; font-weight:800; font-size:13px">Responsibilities</div>
+              <ul>
+                <li>Developed and trained deep learning models for lane line segmentation and traffic light detection.</li>
+                <li>Built automated data preprocessing and annotation workflows to improve dataset quality and training efficiency.</li>
+                <li>Integrated detection modules into a real-time processing pipeline for video stream analysis.</li>
+                <li>Optimized inference performance to ensure stable real-time deployment.</li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">YOLOv8</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">PyTorch/TensorFlow</span>
+                <span class="tag">NumPy</span>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">Traffic Lane Line & Signal Light Detection (MobileNetV3 Optimization)</div>
+                  <div class="meta">Duration: 05/2025 – Present</div>
+                </div>
+                <div class="meta">Role: Computer Vision Technician</div>
+              </div>
+
+              <p class="muted" style="margin:8px 0 0; font-size:13px">
+                An optimized and lightweight detection model engineered to identify the location of lane lines and the state
+                (Green/Red/Yellow) of traffic signals in real-time.
+              </p>
+
+              <div style="margin-top:10px; font-weight:800; font-size:13px">Responsibilities</div>
+              <ul>
+                <li>Employed the MobileNetV3 architecture to ensure high inference speed, making it suitable for edge devices.</li>
+                <li>Conducted model training for both Object Detection and Semantic Segmentation (for lane lines).</li>
+                <li>Optimized the model via Quantization to maintain an accuracy of over 90% while achieving fast processing speeds.</li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">MobileNetV3</span>
+                <span class="tag cyan">TensorFlow Lite / OpenVINO</span>
+                <span class="tag">Quantization</span>
+                <span class="tag">Segmentation</span>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">Traffic Violation Dataset + Real-time Infraction Detection</div>
+                  <div class="meta">Duration: 06/2025 – Present</div>
+                </div>
+                <div class="meta">Role: Co-Author / Data Curator & Developer</div>
+              </div>
+
+              <p class="muted" style="margin:8px 0 0; font-size:13px">
+                A pioneering project to build a comprehensive traffic violation dataset, coupled with the development of a real-time AI
+                system for infraction detection.
+              </p>
+
+              <div style="margin-top:10px; font-weight:800; font-size:13px">Responsibilities</div>
+              <ul>
+                <li>Managed the process of data collection, quality control, and detailed annotation of complex traffic violation scenarios.</li>
+                <li>Developed Object Detection and Tracking models, integrating them with business logic to accurately determine and classify violation behaviors.</li>
+                <li><b>Goal:</b> Build a high-accuracy system capable of providing timely alerts for violations.</li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">CVAT / LabelImg</span>
+                <span class="tag">YOLO / Faster R-CNN</span>
+                <span class="tag">Tracking</span>
+                <span class="tag">Action Recognition</span>
+              </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">Safe Journey</div>
+                  <div class="meta">Duration: 11/2025 – Current</div>
+                </div>
+                <div class="meta">Role: AI Integration Developer</div>
+              </div>
+
+              <p class="muted" style="margin:8px 0 0; font-size:13px">
+                An intelligent traffic monitoring system designed to automatically detect vehicles and identify traffic violations in real-time
+                to enhance road safety management.
+              </p>
+
+              <div style="margin-top:10px; font-weight:800; font-size:13px">Responsibilities</div>
+              <ul>
+                <li>Integrated object detection and tracking models into a real-time video processing pipeline.</li>
+                <li>Designed automated workflows for violation detection and alert generation.</li>
+                <li>Optimized model inference to ensure stable performance in real-world environments.</li>
+                <li>Collaborated with the backend team to deploy and maintain system services.</li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">YOLOv8</span>
+                <span class="tag">DeepSORT</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">Flask / FastAPI</span>
+                <span class="tag">REST APIs</span>
+              </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">UIT Assistant Exam App</div>
+                  <div class="meta">Duration: 01/2025 – Present</div>
+                </div>
+                <div class="meta">Role: Technical Lead (Automation & AI Systems)</div>
+              </div>
+
+              <p class="muted" style="margin:8px 0 0; font-size:13px">
+                An end-to-end MVP platform developed within 3 weeks to support UIT students with academic services and an AI-powered exam practice engine,
+                featuring a RAG-based chatbot, structured exam bank, smart reminders, and automated data pipelines.
+              </p>
+
+              <div style="margin-top:10px; font-weight:800; font-size:13px">Responsibilities</div>
+              <ul>
+                <li>Architected the overall system design, defining module boundaries (Academic Services, RAG Assistant, Practice Engine) and establishing API contracts.</li>
+                <li>Led a 9-member cross-functional team (Data & Tech), assigning roles and ensuring milestone completion within a 3-week MVP timeline.</li>
+                <li>Designed and governed the standardized Question Bank schema (JSON → PostgreSQL), including validation rules, QC sampling strategy, and dataset versioning.</li>
+                <li>Built and supervised the automation pipeline for exam ingestion (PDF/Image/Word → OCR/Parsing → Normalization → QC → Database import).</li>
+                <li>Designed and implemented the RAG architecture (ingestion, chunking, embedding, vector retrieval, citation-based responses, and guardrails to prevent hallucination).</li>
+                <li>Oversaw backend development (FastAPI): practice generation, attempt lifecycle (start/submit/score/history), search agent, and rule-based smart nudges.</li>
+                <li>Established CI/CD workflow, staging environment, logging strategy, and demo-readiness checklist.</li>
+                <li>Coordinated cross-team integration, conducted technical reviews, and resolved architectural blockers.</li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Qdrant</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">React (Vite)</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Git</span>
+                <span class="tag">REST APIs</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GROUP: EXPERIENCE -->
+        <div data-group="experience" data-visible="false" class="fadeIn" style="margin-top:14px">
+          <div class="panel">
+            <h2><span class="dot"></span>Experience</h2>
+
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">Programming Teacher</div>
+                  <div class="meta">ALGORITHMICS | 2024 – current</div>
+                </div>
+                <div class="meta">Role</div>
+              </div>
+              <ul>
+                <li>Assess students' capabilities through an entrance test and analyze strengths/weaknesses to develop a personalized learning roadmap.</li>
+                <li>Prepare detailed lesson plans, combining fundamental and advanced exercises, and self-compiled practice tests for each topic.</li>
+                <li>Deliver clear instruction, illustrate concepts with real-world examples, and guide students on quick and effective problem-solving methods.</li>
+                <li>Support students with regular practice, thoroughly correct mistakes, and provide encouraging feedback.</li>
+                <li>Monitor progress through periodic reports: focusing on accuracy, solution speed, and test results; adjusting teaching methods promptly.</li>
+                <li>Organize mock exams, analyze the test matrix, and provide guidance on time management strategies during the examination.</li>
+                <li>Maintain close communication with parents, report on progress, and propose at-home support options.</li>
+                <li>Update traditional teaching methods, incorporating digital tools when necessary, but prioritizing effective 1:1 interaction.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2><span class="dot"></span>Education</h2>
+
+            <div class="item">
+              <div class="toprow">
+                <div>
+                  <div class="title">Information System</div>
+                  <div class="meta">VNUHCM — University of Information Technology | 2024 – current</div>
+                </div>
+                <div class="meta">Current GPA: 3.1</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2><span class="dot"></span>Activities</h2>
+
+            <div class="item">
+              <div class="toprow">
+                <div class="title">UIT Algo Autumn Bootcamp 2025</div>
+                <div class="meta">Collaborator | 09/2025 – 10/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer>© <span id="year"></span> Lê Thế Vinh — Online CV</footer>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="card side">
+        <div class="mini">
+          <h3>My majors and skills</h3>
+          <div class="chips">
+            <span class="chip good">Automation Architect</span>
+            <span class="chip good">Computer Vision</span>
+            <span class="chip good">Real-time Pipelines</span>
+            <span class="chip good">RAG Systems</span>
+            <span class="chip good">FastAPI</span>
+          </div>
+          <p class="muted" style="margin:10px 0 0; font-size:13px">
+          </p>
+        </div>
+
+        <div class="mini" style="margin-top:12px">
+          <h3>PDF Download</h3>
+          <p class="muted" style="margin:0; font-size:13px">
+          </p>
+          <button class="btn primary" style="margin-top:10px; width:100%" onclick="downloadPDF()">
+            Download CV (PDF)
+          </button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copy email
+    const email = "lethevinh123457@gmail.com";
+    const copyBtn = document.getElementById("copyEmail");
+    copyBtn.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(email);
+        const old = copyBtn.textContent;
+        copyBtn.textContent = "Copied ✅";
+        setTimeout(()=>copyBtn.textContent = old, 1200);
+      }catch(e){
+        alert("Copy failed. Email: " + email);
+      }
+    });
+
+    // 100% force download (works even if server tries to open PDF)
+    function downloadPDF(){
+      const link = document.createElement("a");
+      link.href = "./Le_The_Vinh_CV.pdf";
+      link.download = "Le_The_Vinh_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Tabs logic: 3 main buttons
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    const groups = Array.from(document.querySelectorAll("[data-group]"));
+
+    function showGroup(name){
+      groups.forEach(g => g.dataset.visible = (g.dataset.group === name) ? "true" : "false");
+      tabs.forEach(t => t.setAttribute("aria-current", (t.dataset.tab === name) ? "true" : "false"));
+
+      // retrigger simple animation
+      const visible = document.querySelector(`[data-group="${name}"]`);
+      if (visible){
+        visible.classList.remove("fadeIn");
+        void visible.offsetWidth;
+        visible.classList.add("fadeIn");
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    tabs.forEach(t => t.addEventListener("click", () => showGroup(t.dataset.tab)));
+    showGroup("about");
+  </script>
+</body>
+</html>
